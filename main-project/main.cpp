@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <iomanip>
 using namespace std;
 
 #include "phone_subscription.h"
@@ -17,19 +17,26 @@ int main()
     try
     {
         read("data.txt", subscriptions, size);
+        cout << "***** Телефонный тариф *****\n\n";
         for (int i = 0; i < size; i++)
         {
+            cout << "Номер: ";
             cout << subscriptions[i]->number << '\n';
-            cout << subscriptions[i]->dt.day << '.';
-            cout << subscriptions[i]->dt.month << '.';
-            cout << subscriptions[i]->dt.year << '\n';
-            cout << subscriptions[i]->start.hours << ':';
-            cout << subscriptions[i]->start.minutes << ':';
-            cout << subscriptions[i]->start.seconds << '\n';
-            cout << subscriptions[i]->tm.hours << ':';
-            cout << subscriptions[i]->tm.minutes << ':';
-            cout << subscriptions[i]->tm.seconds << '\n';
+            cout << "Дата звонка: ";
+            cout << setw(2) << setfill('0') << subscriptions[i]->dt.day << '.';
+            cout << setw(2) << setfill('0') << subscriptions[i]->dt.month << '.';
+            cout << setw(4) << setfill('0') << subscriptions[i]->dt.year << '\n';
+            cout << "Время начала: ";
+            cout << setw(2) << setfill('0') << subscriptions[i]->start.hours << ':';
+            cout << setw(2) << setfill('0') << subscriptions[i]->start.minutes << ':';
+            cout << setw(2) << setfill('0') << subscriptions[i]->start.seconds << '\n';
+            cout << "Продолжительность: ";
+            cout << setw(2) << setfill('0') << subscriptions[i]->tm.hours << ':';
+            cout << setw(2) << setfill('0') << subscriptions[i]->tm.minutes << ':';
+            cout << setw(2) << setfill('0') << subscriptions[i]->tm.seconds << '\n';
+            cout << "Тариф: ";
             cout << subscriptions[i]->tariff << '\n';
+            cout << "Стоимость тарифа: ";
             cout << subscriptions[i]->cost << '\n';
             cout << '\n';
         }
