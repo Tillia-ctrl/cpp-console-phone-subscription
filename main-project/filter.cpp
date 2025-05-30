@@ -18,7 +18,7 @@ PhoneCall** filter(PhoneCall* array[], int size, bool (*check)(PhoneCall* elemen
 
 bool fMobileCalls(PhoneCall* element)
 {
-	return strcmp(element->tariff, "") == 0;
+	return strcmp(element->tariff, "мобильный") == 0;
 }
 
 bool fNovember2021Calls(PhoneCall* element)
