@@ -7,5 +7,6 @@ int main()
     cout << "Laboratory work #8. GIT\n";
     cout << "Variant #9. Library Subscription\n";
     cout << "Author: Polina\n";
+    cout << "Group: 24\n";
     return 0;
 }
